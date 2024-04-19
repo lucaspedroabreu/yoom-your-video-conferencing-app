@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Yoom
+
+![Yoom Logo](url(https://yoom-your-video-conferencing-app.vercel.app/_next/image?url=%2Fimages%2Fyoom-logo-2.png&w=48&q=75))
+
+**Yoom: Your Video Conferencing App**
+
+## Introduction
+
+Yoom is a cutting-edge video conferencing application designed to bring your virtual meetings to life. With a focus on ease of use, reliability, and high-quality video and audio, Yoom ensures that you can host and manage your meetings effortlessly, whether they are for business or personal use.
+
+## Features
+
+- **High-Quality Video and Audio**: Experience crystal-clear video and audio in your meetings.
+- **Screen Sharing**: Easily share your screen with participants for more effective communication and presentation.
+- **Chat Functionality**: Interact through text during meetings, allowing for questions and more without interrupting the speaker.
+- **Meeting Recording**: Record your meetings and save them for later review or for those who could not attend.
+- **Multi-Platform Support**: Access Yoom on various platforms, including Windows, macOS, iOS, and Android.
+- **Customizable Backgrounds**: Customize your video background for more engaging and personalized meetings.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+Before you begin, ensure you have the following installed:
+- Node.js (v14 or newer)
+- npm (v6 or newer)
+
+### Installation
+
+Clone the repository to your local machine:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+git clone https://github.com/yourusername/yoom.git
+cd yoom
