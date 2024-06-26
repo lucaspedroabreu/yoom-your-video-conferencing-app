@@ -16,9 +16,12 @@ const Sidebar = () => {
         {sidebarLinks.map((item) => {
           const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`)
 
+          const route = item.route
+          const routeUrl = route === '/' ? route : `${route}/${crypto.randomUUID()}`
+
           return (
             <Link
-              href={item.route}
+              href={routeUrl}
               key={item.label}
               className={cn('flex gap-4 items-center p-4 rounded-lg justify-start', {
                 'bg-info-darker': isActive,

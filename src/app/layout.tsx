@@ -1,13 +1,13 @@
 import '@/app/globals.css'
 
-import type { Metadata } from 'next'
-import { Inter as FontSans, JetBrains_Mono as FontMono } from 'next/font/google'
+import { ptBR } from '@clerk/localizations'
 import { ClerkProvider } from '@clerk/nextjs'
-import { enUS } from '@clerk/localizations'
+import type { Metadata } from 'next'
+import { Inter as FontSans } from 'next/font/google'
 
-import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/theme/theme-provider'
 import { Toaster } from '@/components/ui/sonner'
+import { cn } from '@/lib/utils'
 
 import '@stream-io/video-react-sdk/dist/css/styles.css'
 import 'react-datepicker/dist/react-datepicker.css'
@@ -18,8 +18,8 @@ const fontSans = FontSans({
 })
 
 export const metadata: Metadata = {
-  title: 'Yoom | Your Conferencing App',
-  description: 'A truly powerful replica of zoom',
+  title: 'MindAssit | Seu Parceiro de Vida',
+  description: 'Um verdadeiro parceiro para ajudar a pensar no seu futuro, problemas e soluções',
 }
 
 type RootLayoutProps = Readonly<{
@@ -29,7 +29,7 @@ type RootLayoutProps = Readonly<{
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <ClerkProvider
-      localization={enUS}
+      localization={ptBR}
       appearance={{
         elements: {
           socialButtonsIconButton: {
@@ -38,7 +38,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         },
         layout: {
           socialButtonsPlacement: 'bottom',
-          logoImageUrl: '/images/yoom-logo-2.png',
+          logoImageUrl: '/images/mind-assist-logo.png',
           logoPlacement: 'inside',
           socialButtonsVariant: 'iconButton',
         },
@@ -51,8 +51,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
         },
       }}
     >
-      <html lang="en" suppressHydrationWarning className="flex size-full">
-        <body className={cn('flex flex-1 font-sans antialiased bg-dark-2', fontSans.variable)}>
+      <html lang="en" suppressHydrationWarning className="flex size-full overflow-clip">
+        <body className={cn('flex flex-1 font-sans antialiased bg-dark-2 overflow-clip', fontSans.variable)}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
             {children}
           </ThemeProvider>

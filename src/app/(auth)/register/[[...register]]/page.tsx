@@ -1,9 +1,8 @@
 import { SignUp } from '@clerk/nextjs'
-import React from 'react'
 
 const RegisterPage = () => {
   return (
-    <main>
+    <main className="flex w-full justify-center items-center">
       <SignUp />
     </main>
   )

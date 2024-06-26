@@ -5,24 +5,19 @@ export const sidebarLinks = [
     imgUrl: '/icons/Home.svg',
   },
   {
-    label: 'Upcoming',
-    route: '/upcoming',
-    imgUrl: '/icons/upcoming.svg',
-  },
-  {
-    label: 'Previous',
-    route: '/previous',
-    imgUrl: '/icons/previous.svg',
-  },
-  {
-    label: 'Recordings',
-    route: '/recordings',
-    imgUrl: '/icons/Video.svg',
-  },
-  {
-    label: 'Personal Room',
-    route: '/personal-room',
+    label: 'Novo chat',
+    route: '/chat',
     imgUrl: '/icons/add-personal.svg',
+  },
+  // {
+  //   label: 'Nova anotação',
+  //   route: '/anotacoes',
+  //   imgUrl: '/icons/add-personal.svg',
+  // },
+  {
+    label: 'Convide alguém',
+    route: '/shared',
+    imgUrl: '/icons/join-meeting.svg',
   },
 ]
 

@@ -1,6 +1,5 @@
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
-import React from 'react'
 
 type MeetingOptionCardProps = {
   className: string
@@ -9,7 +8,7 @@ type MeetingOptionCardProps = {
   description: string
   handleClick: () => void
 }
-const MeetingOptionCard = ({ className, imgUrl, title, description, handleClick }: MeetingOptionCardProps) => {
+const OptionsCard = ({ className, imgUrl, title, description, handleClick }: MeetingOptionCardProps) => {
   return (
     <div
       className={cn(
@@ -29,4 +28,4 @@ const MeetingOptionCard = ({ className, imgUrl, title, description, handleClick 
   )
 }
 
-export default MeetingOptionCard
+export default OptionsCard

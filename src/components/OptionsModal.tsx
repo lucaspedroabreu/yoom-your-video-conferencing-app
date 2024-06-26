@@ -1,14 +1,7 @@
-import React, { ReactNode } from 'react'
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/ui/dialog'
-import Image from 'next/image'
+import { Dialog, DialogContent } from '@/components/ui/dialog'
 import { cn } from '@/lib/utils'
+import Image from 'next/image'
+import { ReactNode } from 'react'
 import { Button } from './ui/button'
 
 type MeetingModalProps = {
@@ -23,7 +16,7 @@ type MeetingModalProps = {
   image?: string
 }
 
-const MeetingModal = ({
+const OptionsModal = ({
   isOpen,
   onClose,
   title,
@@ -56,4 +49,4 @@ const MeetingModal = ({
   )
 }
 
-export default MeetingModal
+export default OptionsModal

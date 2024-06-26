@@ -1,18 +1,18 @@
 'use client'
 
-import React, { useState } from 'react'
-import { useRouter } from 'next/navigation'
 import { useUser } from '@clerk/nextjs'
 import { Call, useStreamVideoClient } from '@stream-io/video-react-sdk'
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 import { toast } from 'sonner'
 
-import MeetingOptionCard from '@/components/MeetingOptionCard'
-import MeetingModal from '@/components/MeetingModal'
+import OptionsCard from '@/components/OptionsCard'
+import { default as OptionsModal } from '@/components/OptionsModal'
+import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import ReactDatePicker from 'react-datepicker'
-import { Input } from '@/components/ui/input'
 
-const MeetingOptionsSection = () => {
+const AppOptionsSection = () => {
   const router = useRouter()
   const [values, setValues] = useState({
     dateTime: new Date(),
@@ -89,40 +89,33 @@ const MeetingOptionsSection = () => {
 
   return (
     <section className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
-      <MeetingOptionCard
+      <OptionsCard
         imgUrl="/icons/add-meeting.svg"
-        title="New Meeting"
-        description="Start an instant meeting"
+        title="Novo Chat"
+        description="Inicie um novo chat"
         handleClick={() => {
           toast.success('OK')
           setMeetingState('isInstantMeeting')
         }}
         className="bg-gradient-to-tl from-orange-400 to-orange-300 via-70% via-orange-400/90"
       />
-      <MeetingOptionCard
-        imgUrl="/icons/schedule.svg"
-        title="Schedule Meeting"
-        description="Create an appointment meeting"
+      <OptionsCard
+        imgUrl="/icons/add-meeting.svg"
+        title="Nova anotação"
+        description="Crie uma nova anotação"
         handleClick={() => setMeetingState('isScheduleMeeting')}
         className="bg-gradient-to-tl from-red-400 to-red-300 via-70% via-red-400/90"
       />
-      <MeetingOptionCard
-        imgUrl="/icons/recordings.svg"
-        title="View Recordings"
-        description="Review your past recorded meetings"
-        handleClick={() => router.push('/recordings')}
-        className="bg-gradient-to-tl from-green-400 to-green-300 via-70% via-green-400/90"
-      />
-      <MeetingOptionCard
+      <OptionsCard
         imgUrl="/icons/join-meeting.svg"
-        title="Join a Meeting"
-        description="Join an ongoing meeting via invitation link"
+        title="Compartilhe"
+        description="Convide alguém para visualizar seu painel"
         handleClick={() => setMeetingState('isJoiningMeeting')}
         className="bg-gradient-to-tl from-purple-400 to-purple-300 via-70% via-purple-400/90"
       />
 
       {!callDetails ? (
-        <MeetingModal
+        <OptionsModal
           isOpen={meetingState === 'isScheduleMeeting'}
           onClose={() => setMeetingState(undefined)}
           title="Create Meeting"
@@ -155,9 +148,9 @@ const MeetingOptionsSection = () => {
               className="w-full text-dark-1 rounded bg-dark-3 p-2 focus:outline-none"
             />
           </div>
-        </MeetingModal>
+        </OptionsModal>
       ) : (
-        <MeetingModal
+        <OptionsModal
           isOpen={meetingState === 'isScheduleMeeting'}
           onClose={() => setMeetingState(undefined)}
           title="Meeting Created"
@@ -170,10 +163,10 @@ const MeetingOptionsSection = () => {
           buttonText="Copy meeting link"
         >
           <h3 className="text-center">Share your meeting link!</h3>
-        </MeetingModal>
+        </OptionsModal>
       )}
 
-      <MeetingModal
+      <OptionsModal
         isOpen={meetingState === 'isInstantMeeting'}
         onClose={() => setMeetingState(undefined)}
         title="Start an Instant Meeting"
@@ -182,7 +175,7 @@ const MeetingOptionsSection = () => {
         className="text-center"
       />
 
-      <MeetingModal
+      <OptionsModal
         isOpen={meetingState === 'isJoiningMeeting'}
         onClose={() => setMeetingState(undefined)}
         title="Paste meeting link here"
@@ -202,9 +195,9 @@ const MeetingOptionsSection = () => {
             setValues((prevValues) => ({ ...prevValues, link: e.target.value }))
           }}
         />
-      </MeetingModal>
+      </OptionsModal>
     </section>
   )
 }
 
-export default MeetingOptionsSection
+export default AppOptionsSection

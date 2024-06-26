@@ -1,13 +1,12 @@
 'use client'
 
+import { Drawer, DrawerClose, DrawerContent, DrawerFooter, DrawerHeader, DrawerTrigger } from '@/components/ui/drawer'
+import { sidebarLinks } from '@/constants'
+import { cn } from '@/lib/utils'
+import { SignedIn, UserButton } from '@clerk/nextjs'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-
-import { sidebarLinks } from '@/constants'
-import { Drawer, DrawerClose, DrawerContent, DrawerFooter, DrawerHeader, DrawerTrigger } from '@/components/ui/drawer'
-import { cn } from '@/lib/utils'
-import { SignedIn, UserButton } from '@clerk/nextjs'
 import { Button } from './ui/button'
 
 const MobileNav = () => {
@@ -28,8 +27,8 @@ const MobileNav = () => {
         <DrawerContent className="border-muted-foreground/25 border-0 border-r-2 bg-dark-1 w-full max-w-[264px]">
           <DrawerHeader>
             <Link href="/" className="flex items-center justify-start gap-2">
-              <Image src="/images/yoom-logo-2.png" width={42} height={42} alt="yoom logo" />
-              <span className="text-[26px] font-extrabold text-white">YOOM</span>
+              <Image src="/images/mind-assist-logo.png" width={42} height={42} alt="Mind Assist Logo" />
+              <span className="text-[26px] font-extrabold text-white">MindAssist</span>
             </Link>
           </DrawerHeader>
           <div className="flex h-full flex-col justify-between overflow-y-auto px-2">

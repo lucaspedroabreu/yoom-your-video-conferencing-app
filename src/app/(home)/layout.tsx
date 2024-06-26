@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 
 import Navbar from '@/components/Navbar'
 import Sidebar from '@/components/Sidebar'
@@ -14,9 +14,9 @@ const HomeLayout = ({ children }: HomeLayoutProps) => {
         <Navbar />
         <div className="flex flex-grow">
           <Sidebar />
-          <section className="flex flex-col flex-1 w-full">
-            <div className="h-full">
-              <section className="flex size-full flex-col gap-10 text-muted p-6 pb-6 pt-28 max-md:pb-14 sm:px-14">
+          <section className="flex flex-col flex-1 w-full h-full">
+            <div className="min-h-0 h-full">
+              <section className="flex size-full overflow-y-clip flex-col gap-10 text-muted pb-6 pt-28 max-md:pb-14">
                 {children}
               </section>
             </div>
